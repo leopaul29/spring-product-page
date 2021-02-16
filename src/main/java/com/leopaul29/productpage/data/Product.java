@@ -27,11 +27,22 @@ public class Product {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public double getPrice() {
         return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
