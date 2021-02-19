@@ -1,0 +1,22 @@
+.container{
+    width:1100px;
+    height:100vh;
+    margin:auto;
+}
+.productList{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.product{
+    border: solid 1px;
+    border-radius: 5px;
+    padding: 15px;
+    width: 300px;
+}
+.product__name{
+}
+.product__description{
+}
+.product__price{
+}

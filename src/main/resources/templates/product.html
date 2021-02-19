@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" >
+</head>
+<body>
+<div class="product">
+    <div class="product__name" th:text="${product.name}">product__name</div>
+    <div class="product__description" th:text="${product.description}">product__description</div>
+    <div class="product__price" th:text="${product.price}">product__price</div>
+</div>
+</body>
+</html>
