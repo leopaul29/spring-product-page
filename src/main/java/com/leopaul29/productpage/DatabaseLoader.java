@@ -9,18 +9,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 
-   /* @Autowired
-    private MongoTemplate mongoTemplate;/*
-   */ @Autowired
+    @Autowired
     private ProductRepository repository;
 
     public void run(String... args) throws Exception {
         repository.deleteAll();
-        repository.save(new Product("product1", "description 1", 21.1));
-        repository.save(new Product("product2", "description 2", 22.2));
-        repository.save(new Product("product3", "description 3", 23.3));
-        repository.save(new Product("product4", "description 4", 24.4));
-        repository.save(new Product("product5", "description 5", 25.5));
+        String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vestibulum auctor ante vitae porttitor. Vivamus porta malesuada condimentum.";
+        for (int i = 0; i < 100; i++) {
+            double randomPrice = Math.round(Math.random() * 1000) + Math.round(Math.random());
+            int length = (int) Math.round(Math.random() * loremIpsum.length());
+            if (length < 20) length = 20;
+            String description = loremIpsum.substring(0, length);
+            repository.save(new Product("product " + i, description, randomPrice));
+        }
     }
-
 }
