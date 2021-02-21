@@ -1,11 +1,16 @@
 package com.leopaul29.productpage.data;
 
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
+@Entity
 public class Product {
 
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String name;
 
@@ -13,13 +18,15 @@ public class Product {
 
     private double price;
 
+    public Product(){}
+
     public Product(String name, String description, double price) {
         this.name = name;
         this.description = description;
         this.price = price;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
@@ -42,6 +49,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
+                "id='"+id + '\'' +
                 "name='" + name + '\'' +
                 '}';
     }
