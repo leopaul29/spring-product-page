@@ -28,6 +28,11 @@ body{
     color: #F28888;
     font-size: 48px;
 }
+.h2-title{
+    text-align: center;
+    color: #F28888;
+    font-size: 32px;
+}
 .productList{
     display: flex;
     flex-direction: row;
@@ -47,11 +52,11 @@ body{
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 50px;
-    margin-right: 50px;
+    margin-right: 25px;
 }
 .card:hover {
     cursor:pointer;
-    background-color:#3E38F2;
+    transform: scale(1.03);
 }
 .product__name{
     color: #F28888;
@@ -61,5 +66,27 @@ body{
     color: #171559;
 }
 .product__price{
-    color:#2A26A6;
+    color: #171559;
+    font-weight: bold;
+    font-size: 24px;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+}
+.button__page{
+    background-color: #2A26A6;
+    color: #5068F2;
+    margin: 3px;
+    padding: 15px 25px;
+    border: solid 3px;
+    font-size: 18px;
+    border-radius: 5px;
+    font-weight: 700;
+    border-color: #171559;
+}
+.button__page:hover{
+    background-color: #171559;
+    color:#F28888;
+    cursor:pointer;
 }

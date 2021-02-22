@@ -19,7 +19,7 @@ public class DatabaseLoader implements CommandLineRunner {
             double randomPrice = Math.round(Math.random() * 1000) + Math.round(Math.random());
             int length = (int) Math.round(Math.random() * loremIpsum.length());
             if (length < 20) length = 20;
-            String description = loremIpsum.substring(0, length);
+            String description = loremIpsum.substring(0, length) + "...";
             repository.save(new Product("product " + i, description, randomPrice));
         }
     }
