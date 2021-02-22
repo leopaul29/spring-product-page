@@ -68,8 +68,8 @@ export default class App extends React.Component {
 
 class ProductList extends React.Component{
 	render() {
-		const products = this.props.products.map(product =>
-			<Product key={product._links.self.href} product={product}/>
+		const products = this.props.products.map((product, index) =>
+			<Product key={product._links.self.href} product={product} id={index}/>
 		);
 		return (
             <div className="productList">
@@ -80,19 +80,26 @@ class ProductList extends React.Component{
 }
 
 class Product extends React.Component{
+    constructor(props) {
+		super(props);
+		this.state = {productUrl: "/product/" + this.props.id};
+	}
+
 	render() {
 		return (
-            <div className="card">
-                <div className="product__name">
-                    <h2 className="h2-title">{this.props.product.name}</h2>
+            <a href={this.state.productUrl}>
+                <div className="card">
+                    <div className="product__name">
+                        <h2 className="h2-title">{this.props.product.name}</h2>
+                    </div>
+                    <div className="product__description">
+                        <p>{this.props.product.description}</p>
+                    </div>
+                    <div className="product__price">
+                        <p>{this.props.product.price}</p>
+                    </div>
                 </div>
-                <div className="product__description">
-                    <p>{this.props.product.description}</p>
-                </div>
-                <div className="product__price">
-                    <p>{this.props.product.price}</p>
-                </div>
-            </div>
+            </a>
 		)
 	}
 }

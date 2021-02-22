@@ -6,10 +6,18 @@
     <link rel="stylesheet" th:href="@{/css/style.css}" >
 </head>
 <body>
-<div class="product">
-    <div class="product__name" th:text="${product.name}">product__name</div>
-    <div class="product__description" th:text="${product.description}">product__description</div>
-    <div class="product__price" th:text="${product.price}">product__price</div>
-</div>
+<main class="container container-product">
+    <div class="card">
+        <div class="product__name">
+            <h2 class="h2-title" th:text="${product.name}">{this.props.product.name}</h2>
+        </div>
+        <div class="product__description">
+            <p th:text="${product.description}">{this.props.product.description}</p>
+        </div>
+        <div class="product__price">
+            <p th:text="${product.price}">{this.props.product.price}</p>
+        </div>
+    </div>
+</main>
 </body>
 </html>

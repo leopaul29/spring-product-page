@@ -5,8 +5,9 @@
 body{
     font-family: DotGothic16;
     background-color: #3E38F2;
-    background: radial-gradient(circle, #3E38F2 0%, #5068F2 100%);*/
+    background: radial-gradient(circle, #3E38F2 0%, #5068F2 100%);
 }
+a{text-decoration: none;}
 .Illustration-1-hex { background-color: #3E38F2; }
 .Illustration-2-hex { background-color: #2A26A6; }
 .Illustration-3-hex { background-color: #171559; }
@@ -22,6 +23,12 @@ body{
     min-height:100vh;
     margin:auto;
     padding: 50px;
+}
+.container-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 .h1-title{
     text-align: center;
