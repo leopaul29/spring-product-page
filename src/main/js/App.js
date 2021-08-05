@@ -58,9 +58,9 @@ export default class App extends React.Component {
                 <div className="Illustration-5-hex square"></div>
                 <h1 className="h1-title">Product Land</h1>
                 <ProductList products={this.state.products}/>
-                <div className="pagination">
+                /*<div className="pagination">
                     {navLinks}
-                </div>
+                </div>*/
             </main>
 		)
 	}
